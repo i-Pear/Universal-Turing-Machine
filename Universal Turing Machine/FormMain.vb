@@ -115,6 +115,7 @@
 
         str.Clear()
 
+        str.Add(blankChar)
         For Each item In RichTextBoxString.Text.Split(",")
             str.Add(item)
         Next
@@ -214,7 +215,7 @@
         ButtonNext.Enabled = True
         ButtonLoadFile.Enabled = False
         ParseConfig()
-        cntPos = 0
+        cntPos = 1
         cntStatus = initStatus
         hasReachedBlank = False
         LabelCntStatus.Text = cntStatus
