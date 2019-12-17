@@ -275,6 +275,7 @@
     End Sub
 
 End Class
+
 Public Class Trigger
     Public status As String
     Public input As String
@@ -289,6 +290,7 @@ Public Class Trigger
     End Function
 
 End Class
+
 Public Class Destination
     Public ToStatus As String
     Public WriteChar As String
