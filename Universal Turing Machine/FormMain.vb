@@ -13,6 +13,7 @@
 
     Private cntPos As Integer
     Private cntStatus As String
+    Private lastPos As Integer
 
     Private Sub PaintGraph()
         dashboard.Clear()
@@ -22,6 +23,9 @@
             If i = cntPos Then
                 dashboard.Select(cntCount, str(i).ToString.Length)
                 dashboard.SelectionBackColor = Color.Green
+            ElseIf i = lastPos Then
+                dashboard.Select(cntCount, str(i).ToString.Length)
+                dashboard.SelectionBackColor = Color.LightBlue
             End If
             dashboard.AppendText(" ")
             dashboard.Select(dashboard.TextLength - 1, 1)
@@ -52,6 +56,7 @@
             Dim dest As Destination = transfer(trigger)
             ListBoxTransfer.SelectedIndex = dest.listID
             str(cntPos) = dest.WriteChar
+            lastPos = cntPos
             If dest.Motion = "L" Then
                 cntPos -= 1
             ElseIf dest.Motion = "R" Then
@@ -208,6 +213,7 @@
         cntStatus = initStatus
         hasReachedBlank = False
         LabelCntStatus.Text = cntStatus
+        lastPos = -1
 
         'Check valid
         For Each i In str
@@ -234,22 +240,22 @@
         End If
 
         For Each i In transfer
-            If Not charSet.Contains(i.Key.input) Then
+            If Not (charSet.Contains(i.Key.input) Or i.Key.input = blankChar) Then
                 MessageBox.Show("转移函数中含有非法字符")
                 StopProcess()
                 Exit Sub
             End If
-            If Not charSet.Contains(i.Value.WriteChar) Then
+            If Not (charSet.Contains(i.Value.WriteChar) Or i.Value.WriteChar = blankChar) Then
                 MessageBox.Show("转移函数中含有非法字符")
                 StopProcess()
                 Exit Sub
             End If
-            If Not charSet.Contains(i.Key.status) Then
+            If Not status.Contains(i.Key.status) Then
                 MessageBox.Show("转移函数中含有非法状态")
                 StopProcess()
                 Exit Sub
             End If
-            If Not charSet.Contains(i.Value.ToStatus) Then
+            If Not status.Contains(i.Value.ToStatus) Then
                 MessageBox.Show("转移函数中含有非法状态")
                 StopProcess()
                 Exit Sub
