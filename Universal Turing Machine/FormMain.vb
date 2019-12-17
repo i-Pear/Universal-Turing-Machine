@@ -14,7 +14,7 @@
     Private cntPos As Integer
     Private cntStatus As String
 
-    Private Sub paintGraph()
+    Private Sub PaintGraph()
         dashboard.Clear()
         For i = 0 To str.Count - 1
             Dim cntCount As Integer = dashboard.TextLength
@@ -72,7 +72,7 @@
             StopProcess()
         End If
 
-        paintGraph()
+        PaintGraph()
 
         If str(cntPos) = blankChar Then
             hasReachedBlank = True
@@ -261,7 +261,7 @@
             End If
         Next
 
-        paintGraph()
+        PaintGraph()
     End Sub
 
     Private Sub ButtonNext_Click(sender As Object, e As EventArgs) Handles ButtonNext.Click
