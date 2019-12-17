@@ -63,17 +63,17 @@
                 cntPos += 1
             End If
             If cntPos < 0 Then
-                MessageBox.Show("读写头超过左边界！")
+                MessageBox.Show("读写头超过左边界！", "错误"， MessageBoxButtons.OK, MessageBoxIcon.Error)
                 StopProcess()
             End If
             If cntPos >= str.Count Then
-                MessageBox.Show("读写头超过右边界！")
+                MessageBox.Show("读写头超过右边界！", "错误"， MessageBoxButtons.OK, MessageBoxIcon.Error)
                 StopProcess()
             End If
             cntStatus = dest.ToStatus
             LabelCntStatus.Text = cntStatus
         Else
-            MessageBox.Show("找不到对应的转移函数 不接受此字符串")
+            MessageBox.Show("找不到对应的转移函数 不接受此字符串", "提示"， MessageBoxButtons.OK, MessageBoxIcon.Information)
             StopProcess()
         End If
 
@@ -84,7 +84,7 @@
         End If
 
         If hasReachedBlank And finalStatus.Contains(cntStatus) Then
-            MessageBox.Show("到达中止状态 接受此字符串")
+            MessageBox.Show("到达中止状态 接受此字符串", "提示"， MessageBoxButtons.OK, MessageBoxIcon.Information)
             StopProcess()
         End If
 
@@ -198,6 +198,11 @@
     End Sub
 
     Private Sub ButtonStart_Click(sender As Object, e As EventArgs) Handles ButtonStart.Click
+        If RichTextBoxBlank.TextLength = 0 Or RichTextBoxCharset.TextLength = 0 Or RichTextBoxInit.TextLength = 0 Or RichTextBoxFinal.TextLength = 0 Or RichTextBoxStatus.TextLength = 0 Or RichTextBoxString.TextLength = 0 Then
+            MessageBox.Show("参数不完整！", "错误"， MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
         RichTextBoxBlank.EnableAutoDragDrop = False
         RichTextBoxCharset.Enabled = False
         RichTextBoxFinal.Enabled = False
@@ -219,7 +224,7 @@
         For Each i In str
             If i = blankChar Then Continue For
             If Not charSet.Contains(i) Then
-                MessageBox.Show("字符串中含有非法字符")
+                MessageBox.Show("字符串中含有非法字符", "错误"， MessageBoxButtons.OK, MessageBoxIcon.Error)
                 StopProcess()
                 Exit Sub
             End If
@@ -227,41 +232,41 @@
 
         For Each i In finalStatus
             If Not status.Contains(i) Then
-                MessageBox.Show("中止状态中含有非法状态")
+                MessageBox.Show("中止状态中含有非法状态", "错误"， MessageBoxButtons.OK, MessageBoxIcon.Error)
                 StopProcess()
                 Exit Sub
             End If
         Next
 
         If Not status.Contains(initStatus) Then
-            MessageBox.Show("初始状态不合法")
+            MessageBox.Show("初始状态不合法", "错误"， MessageBoxButtons.OK, MessageBoxIcon.Error)
             StopProcess()
             Exit Sub
         End If
 
         For Each i In transfer
             If Not (charSet.Contains(i.Key.input) Or i.Key.input = blankChar) Then
-                MessageBox.Show("转移函数中含有非法字符")
+                MessageBox.Show("转移函数中含有非法字符", "错误"， MessageBoxButtons.OK, MessageBoxIcon.Error)
                 StopProcess()
                 Exit Sub
             End If
             If Not (charSet.Contains(i.Value.WriteChar) Or i.Value.WriteChar = blankChar) Then
-                MessageBox.Show("转移函数中含有非法字符")
+                MessageBox.Show("转移函数中含有非法字符", "错误"， MessageBoxButtons.OK, MessageBoxIcon.Error)
                 StopProcess()
                 Exit Sub
             End If
             If Not status.Contains(i.Key.status) Then
-                MessageBox.Show("转移函数中含有非法状态")
+                MessageBox.Show("转移函数中含有非法状态", "错误"， MessageBoxButtons.OK, MessageBoxIcon.Error)
                 StopProcess()
                 Exit Sub
             End If
             If Not status.Contains(i.Value.ToStatus) Then
-                MessageBox.Show("转移函数中含有非法状态")
+                MessageBox.Show("转移函数中含有非法状态", "错误"， MessageBoxButtons.OK, MessageBoxIcon.Error)
                 StopProcess()
                 Exit Sub
             End If
             If i.Value.Motion <> "L" And i.Value.Motion <> "R" And i.Value.Motion <> "S" Then
-                MessageBox.Show("转移函数中含有非法操作")
+                MessageBox.Show("转移函数中含有非法操作", "错误"， MessageBoxButtons.OK, MessageBoxIcon.Error)
                 StopProcess()
                 Exit Sub
             End If
