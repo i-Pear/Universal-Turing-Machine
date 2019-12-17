@@ -192,6 +192,8 @@ Partial Class FormMain
         '
         'dashboard
         '
+        Me.dashboard.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.dashboard.Font = New System.Drawing.Font("等线", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.dashboard.Location = New System.Drawing.Point(12, 434)
         Me.dashboard.Name = "dashboard"
