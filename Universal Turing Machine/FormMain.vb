@@ -39,7 +39,7 @@
         ButtonStart.Enabled = True
         ButtonLoadFile.Enabled = True
 
-        RichTextBoxBlank.EnableAutoDragDrop = True
+        RichTextBoxBlank.Enabled = True
         RichTextBoxCharset.Enabled = True
         RichTextBoxFinal.Enabled = True
         RichTextBoxInit.Enabled = True
@@ -204,7 +204,7 @@
             Return
         End If
 
-        RichTextBoxBlank.EnableAutoDragDrop = False
+        RichTextBoxBlank.Enabled = False
         RichTextBoxCharset.Enabled = False
         RichTextBoxFinal.Enabled = False
         RichTextBoxInit.Enabled = False
