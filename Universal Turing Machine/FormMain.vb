@@ -57,6 +57,11 @@
             ListBoxTransfer.SelectedIndex = dest.listID
             str(cntPos) = dest.WriteChar
             lastPos = cntPos
+
+            If dest.Motion = "R" And cntPos = str.Count - 1 Then
+                str.Add(blankChar)
+            End If
+
             If dest.Motion = "L" Then
                 cntPos -= 1
             ElseIf dest.Motion = "R" Then
@@ -149,6 +154,7 @@
         reader.ReadLine()
         Dim transferConfig As String
         ListBoxTransfer.Items.Clear()
+        transfer.Clear()
         Dim listCount As Integer = 0
         While True
             transferConfig = reader.ReadLine()

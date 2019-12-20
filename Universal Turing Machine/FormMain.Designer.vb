@@ -47,6 +47,8 @@ Partial Class FormMain
         '
         'RichTextBoxStatus
         '
+        Me.RichTextBoxStatus.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RichTextBoxStatus.Font = New System.Drawing.Font("等线", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.RichTextBoxStatus.Location = New System.Drawing.Point(118, 99)
         Me.RichTextBoxStatus.Name = "RichTextBoxStatus"
@@ -76,6 +78,8 @@ Partial Class FormMain
         '
         'RichTextBoxCharset
         '
+        Me.RichTextBoxCharset.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RichTextBoxCharset.Font = New System.Drawing.Font("等线", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.RichTextBoxCharset.Location = New System.Drawing.Point(118, 183)
         Me.RichTextBoxCharset.Name = "RichTextBoxCharset"
@@ -95,6 +99,8 @@ Partial Class FormMain
         '
         'RichTextBoxFinal
         '
+        Me.RichTextBoxFinal.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RichTextBoxFinal.Font = New System.Drawing.Font("等线", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.RichTextBoxFinal.Location = New System.Drawing.Point(118, 265)
         Me.RichTextBoxFinal.Name = "RichTextBoxFinal"
@@ -121,6 +127,8 @@ Partial Class FormMain
         '
         'RichTextBoxString
         '
+        Me.RichTextBoxString.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RichTextBoxString.Font = New System.Drawing.Font("等线", 16.0!)
         Me.RichTextBoxString.Location = New System.Drawing.Point(118, 348)
         Me.RichTextBoxString.Name = "RichTextBoxString"
@@ -173,9 +181,9 @@ Partial Class FormMain
         'ButtonLoadFile
         '
         Me.ButtonLoadFile.Font = New System.Drawing.Font("等线", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.ButtonLoadFile.Location = New System.Drawing.Point(610, 24)
+        Me.ButtonLoadFile.Location = New System.Drawing.Point(599, 24)
         Me.ButtonLoadFile.Name = "ButtonLoadFile"
-        Me.ButtonLoadFile.Size = New System.Drawing.Size(97, 51)
+        Me.ButtonLoadFile.Size = New System.Drawing.Size(108, 51)
         Me.ButtonLoadFile.TabIndex = 19
         Me.ButtonLoadFile.Text = "加载配置"
         Me.ButtonLoadFile.UseVisualStyleBackColor = True
@@ -193,8 +201,9 @@ Partial Class FormMain
         '
         'dashboard
         '
-        Me.dashboard.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.dashboard.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dashboard.Font = New System.Drawing.Font("等线", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.dashboard.Location = New System.Drawing.Point(12, 434)
         Me.dashboard.Name = "dashboard"
@@ -233,10 +242,10 @@ Partial Class FormMain
         'LabelCntStatus
         '
         Me.LabelCntStatus.AutoSize = True
-        Me.LabelCntStatus.Font = New System.Drawing.Font("等线", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.LabelCntStatus.Location = New System.Drawing.Point(508, 40)
+        Me.LabelCntStatus.Font = New System.Drawing.Font("等线", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.LabelCntStatus.Location = New System.Drawing.Point(505, 37)
         Me.LabelCntStatus.Name = "LabelCntStatus"
-        Me.LabelCntStatus.Size = New System.Drawing.Size(47, 19)
+        Me.LabelCntStatus.Size = New System.Drawing.Size(60, 25)
         Me.LabelCntStatus.TabIndex = 25
         Me.LabelCntStatus.Text = "Stop"
         '
