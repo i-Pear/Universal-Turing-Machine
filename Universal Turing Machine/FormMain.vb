@@ -58,7 +58,7 @@
             str(cntPos) = dest.WriteChar
             lastPos = cntPos
 
-            If dest.Motion = "R" And cntPos = str.Count - 1 Then
+            If (dest.WriteChar <> blankChar Or dest.Motion = "R") And cntPos = str.Count - 1 Then
                 str.Add(blankChar)
             End If
 
